@@ -7,6 +7,10 @@ router.beforeEach((to, from, next) => {
   if (isToken) {
     next();
   } else {
-    next({name: 'login'});
+    if (to.path === '/login') {
+      next();
+    } else {
+      next({ name: 'login' });
+    }
   }
 })

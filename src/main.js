@@ -7,6 +7,8 @@ import installIcons from '@/icons'
 import 'element-plus/dist/index.css'
 import './style/index.less'
 
+import './utils/permission'
+
 const app = createApp(App)
 installIcons(app)
 createApp(App).use(store).use(router).mount('#app')
