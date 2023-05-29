@@ -15,11 +15,11 @@ module.exports = {
       index: '/index.html',
     },
     proxy: { // 设置代理
-      '/': {
+      '/api': {
         target: 'http://localhost:6666',
         ws: false,
         pathRewrite: {
-          '^/': '/'
+          '^/api': '/'
         }
       },
     },

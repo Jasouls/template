@@ -1,11 +1,17 @@
 <template>
   <div class="common-page flex-column">
-    <div class="common-header"></div>
+    <div class="common-header">
+      <CommonHead />
+    </div>
     <div class="common-main flex-1">
       <router-view></router-view>
     </div>
   </div>
 </template>
+
+<script setup>
+import CommonHead from '@/components/common/CommonHead';
+</script>
 
 <style lang="less" scoped>
 .common-header {
