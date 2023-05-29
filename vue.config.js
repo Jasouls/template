@@ -9,6 +9,21 @@ function resolve(dir) {
 }
 
 module.exports = {
+  devServer: {
+    port: 8888,
+    historyApiFallback: {
+      index: '/index.html',
+    },
+    proxy: { // 设置代理
+      '/': {
+        target: 'http://localhost:6666',
+        ws: false,
+        pathRewrite: {
+          '^/': '/'
+        }
+      },
+    },
+  },
   configureWebpack: {
     plugins: [
       AutoImport({

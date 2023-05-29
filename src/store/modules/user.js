@@ -4,6 +4,7 @@ import { login, logout, getUserInfo } from '@/api/user';
 const user = {
   state: {
     token: '',
+    userName: '',
   },
   mutations: {
     SET_TOKEN: (state, data) => {
@@ -15,7 +16,7 @@ const user = {
       removeLoginStatus();
     },
     SET_USERINFO: (state, data) => {
-      console.log(data);
+      state.userName = data.userName;
     }
   },
   actions: {
@@ -23,10 +24,11 @@ const user = {
       return new Promise((resolve, reject) => {
         logout().then(() => {
           commit('REMOVE_TOKEN');
+          commit('SET_USERINFO', { userName: '' });
           resolve();
         })
-        .catch((error) => {
-          reject(error);
+        .catch((err) => {
+          reject(err);
         });
       });
     },
