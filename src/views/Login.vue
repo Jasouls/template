@@ -1,6 +1,7 @@
 <template>
   <div class="login-page">
     <div class="login-block">
+      <h2>登录</h2>
       <el-form
         ref="ruleFormRef"
         :model="ruleForm"
@@ -77,3 +78,29 @@ const resetForm = (formEl) => {
   formEl.resetFields()
 }
 </script>
+
+<style lang="less" scoped>
+.login-page {
+  width: 100%;
+  height: 100%;
+  background-color: #bfa;
+  position: relative;
+  .login-block {
+    width: 400px;
+    height: 240px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid black;
+    padding: 20px 80px 40px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      transform: translateX(40px);
+    }
+  }
+}
+</style>
